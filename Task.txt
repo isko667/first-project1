@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main (String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Введите доход: ");
+        double income = sc.nextDouble();
+        
+        System.out.print("Введите ежемесячные расходы: ");
+        double expenses = sc.nextDouble();
+        
+        System.out.print("Введите сумму кредита: ");
+        double loanAmount = sc.nextDouble();
+        
+        System.out.print("Введите срок кредита (в месяцах): ");
+        double months = sc.nextDouble();
+        
+        double monthlyPayment = loanAmount / months;
+        double netIncome = income - expenses;
+        
+        if (netIncome > (monthlyPayment * 0.5)) {
+            System.out.println("Кредит одобрен");
+        } else {
+            System.out.println("Кредит не одобрен");
+        }
+        
+        sc.close();
+    }
+}
